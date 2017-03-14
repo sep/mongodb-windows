@@ -5,14 +5,16 @@
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 
-unless os.windows?
-  describe user('root') do
-    it { should exist }
-    skip 'This is an example test, replace with your own test.'
-  end
+describe service('MongoDB') do
+  it { should be_installed }
+  it { should be_enabled }
+  it { should be_running }
 end
 
-describe port(80) do
-  it { should_not be_listening }
-  skip 'This is an example test, replace with your own test.'
+script = <<-EOH
+  mongo --help
+EOH
+
+describe powershell(script) do
+  its('stdout') { should match ".*MongoDB shell version: 2.6.12.*" }
 end
