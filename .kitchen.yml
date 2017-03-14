@@ -1,8 +1,7 @@
 ---
 driver:
   name: vagrant
-  synced_folders: 
-    - ["C:/Installers/Mongo", "c:/Installers/Mongo"]
+  
   customize:
     cpus: 2
     memory: 4096
