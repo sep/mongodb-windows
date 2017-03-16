@@ -16,5 +16,5 @@ script = <<-EOH
 EOH
 
 describe powershell(script) do
-  its('stdout') { should match ".*MongoDB shell version: 2.6.12.*" }
+  its('stdout') { should match '.*MongoDB shell version: 2.6.12.*' }
 end
