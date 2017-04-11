@@ -30,7 +30,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[mongodb-windows::install]
+      - recipe[mongodb-windows]
     verifier:
       inspec_tests:
         - test/smoke/default
